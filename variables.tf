@@ -9,6 +9,21 @@ variable "layer_name" {
   type = string
   default = "nasuni-labs-os-lambda-layer"
 }
+variable "lambda_layer_suffix" {
+  type = string
+  default = ""
+}
+variable "nacscheduler_uid" {
+  type = string
+  default = ""
+}
+variable "user_vpc_id" {
+  default = ""
+}
+
+variable "user_subnet_id" {
+  default = ""
+}
 
 
 variable "nac_scheduler_ip_addr" {
@@ -123,6 +138,10 @@ variable "SourceBucketAccessKeyID" {
   default = ""
 }
 
+variable "git_branch" {
+  default=""
+}
+
 variable "SourceBucketSecretAccessKey" {
   default = ""
 }
@@ -140,11 +159,11 @@ variable "StartingPoint" {
 }
 
 variable "IncludeFilterPattern" {
-  default = "*"
+  default = "*.txt,*.csv,*.docx,*.xls,*.xlsx,*.pptx,*.pdf"
 }
 
 variable "IncludeFilterType" {
-  default = "glob"
+  default = "glob_list"
 }
 
 variable "ExcludeFilterPattern" {
@@ -185,7 +204,9 @@ variable "DestinationBucket" {
 variable "UniFSTOCHandle" {
   default = ""
 }
-
+variable "nac_es_securitygroup_id" {
+  default = ""
+}
 variable "SourceBucket" {
   default = ""
 }
